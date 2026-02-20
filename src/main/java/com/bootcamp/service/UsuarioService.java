@@ -2,7 +2,7 @@ package com.bootcamp.service;
 
 import com.bootcamp.model.Usuario;
 import com.bootcamp.repository.IUsuarioRepository;
-import com.bootcamp.repository.UsuarioRepository;
+import com.bootcamp.repository.UsuarioRepositoryJPA;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +11,7 @@ public class UsuarioService {
     private final IUsuarioRepository repository;
 
     public UsuarioService() {
-        this.repository = new UsuarioRepository();
+        this.repository = new UsuarioRepositoryJPA();
     }
 
     public UsuarioService(IUsuarioRepository repository) {

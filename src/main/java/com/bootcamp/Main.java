@@ -2,6 +2,7 @@ package com.bootcamp;
 
 import com.bootcamp.model.Usuario;
 import com.bootcamp.service.UsuarioService;
+import com.bootcamp.repository.UsuarioRepositoryJPA;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,6 +42,7 @@ public class Main {
             System.out.println();
         }
         scanner.close();
+        UsuarioRepositoryJPA.fecharFactory();
     }
 
     private static void exibirMenu() {

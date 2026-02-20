@@ -1,10 +1,22 @@
 package com.bootcamp.model;
 
+import jakarta.persistence.*;
 import java.util.Objects;
 
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "nome", nullable = false, length = 255)
     private String nome;
+
+    @Column(name = "email", nullable = false, unique = true, length = 255)
     private String email;
 
     // Construtores
