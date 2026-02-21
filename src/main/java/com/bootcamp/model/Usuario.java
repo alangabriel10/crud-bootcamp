@@ -1,22 +1,28 @@
 package com.bootcamp.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Objects;
 
-
+/**
+ * Entidade JPA Usuario - Gerenciada pelo Spring Data JPA
+ */
 @Entity
 @Table(name = "usuarios")
 public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
-    @Column(name = "nome", nullable = false, length = 255)
+    @NotBlank(message = "Nome é obrigatório")
+    @Column(nullable = false, length = 255)
     private String nome;
 
-    @Column(name = "email", nullable = false, unique = true, length = 255)
+    @NotBlank(message = "Email é obrigatório")
+    @Email(message = "Email deve ser válido")
+    @Column(nullable = false, unique = true, length = 255)
     private String email;
 
     // Construtores
@@ -34,7 +40,7 @@ public class Usuario {
         this.email = email;
     }
 
-    // Getters e Setters com validação
+    // Getters e Setters
     public Long getId() {
         return id;
     }
@@ -48,10 +54,7 @@ public class Usuario {
     }
 
     public void setNome(String nome) {
-        if (nome == null || nome.trim().isEmpty()) {
-            throw new IllegalArgumentException("Nome não pode ser vazio!");
-        }
-        this.nome = nome.trim();
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -59,34 +62,15 @@ public class Usuario {
     }
 
     public void setEmail(String email) {
-        if (email == null || email.trim().isEmpty()) {
-            throw new IllegalArgumentException("Email não pode ser vazio!");
-        }
-        if (!validarEmail(email)) {
-            throw new IllegalArgumentException("Email inválido!");
-        }
-        this.email = email.trim().toLowerCase();
+        this.email = email;
     }
 
-    // Método de validação de email
-    private boolean validarEmail(String email) {
-        return email.contains("@") && email.contains(".");
-    }
-
-    // Método para verificar se o usuário está completo
-    public boolean isValido() {
-        return nome != null && !nome.trim().isEmpty()
-                && email != null && !email.trim().isEmpty();
-    }
-
-    // equals e hashCode
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Usuario usuario = (Usuario) o;
-        return Objects.equals(id, usuario.id) &&
-                Objects.equals(email, usuario.email);
+        return Objects.equals(id, usuario.id) && Objects.equals(email, usuario.email);
     }
 
     @Override
@@ -96,10 +80,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Usuario{id=" + id + ", nome='" + nome + "', email='" + email + "'}";
     }
 }

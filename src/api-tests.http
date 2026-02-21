@@ -1,0 +1,50 @@
+### Criar usuário
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Maria Silva",
+  "email": "maria@email.com"
+}
+
+### Criar outro usuário
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João Santos",
+  "email": "joao@email.com"
+}
+
+### Listar todos os usuários
+GET http://localhost:8080/api/usuarios
+
+### Buscar usuário por ID
+GET http://localhost:8080/api/usuarios/1
+
+### Buscar por email
+GET http://localhost:8080/api/usuarios/email/maria@email.com
+
+### Atualizar usuário
+PUT http://localhost:8080/api/usuarios/1
+Content-Type: application/json
+
+{
+  "nome": "Maria Silva Costa",
+  "email": "maria.costa@email.com"
+}
+
+### Contar usuários
+GET http://localhost:8080/api/usuarios/count
+
+### Remover usuário
+DELETE http://localhost:8080/api/usuarios/2
+
+### Testar email duplicado (deve dar erro)
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Teste",
+  "email": "maria@email.com"
+}
