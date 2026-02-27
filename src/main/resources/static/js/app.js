@@ -1,5 +1,5 @@
 // URL base da API
-const API_URL = 'http://localhost:8080/api/usuarios';
+const API_URL = window.location.origin + '/api/usuarios';
 
 let usuarioIdParaExcluir = null;
 let modalUsuario, modalExcluir;
