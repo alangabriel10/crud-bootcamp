@@ -61,9 +61,15 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>com.bootcamp.CrudUsuariosApplication</mainClass>
-                    <!-- Exclui devtools do JAR final -->
                     <excludeDevtools>true</excludeDevtools>
                 </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
