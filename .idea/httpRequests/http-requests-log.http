@@ -1,0 +1,94 @@
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+Content-Length: 51
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "nome": "Teste",
+  "email": "maria@email.com"
+}
+
+<> 2026-02-21T155245.400.txt
+
+###
+
+DELETE http://localhost:8080/api/usuarios/2
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2026-02-21T155240.200.txt
+
+###
+
+GET http://localhost:8080/api/usuarios/count
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-02-21T155231.200.json
+
+###
+
+GET http://localhost:8080/api/usuarios/email/maria@email.com
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> f.txt
+
+###
+
+GET http://localhost:8080/api/usuarios/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-02-21T155206.200.json
+
+###
+
+GET http://localhost:8080/api/usuarios
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-02-21T155157.200.json
+
+###
+
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+Content-Length: 57
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "nome": "João Santos",
+  "email": "joao@email.com"
+}
+
+<> 2026-02-21T155124.201.json
+
+###
+
+POST http://localhost:8080/api/usuarios
+Content-Type: application/json
+Content-Length: 57
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "nome": "Maria Silva",
+  "email": "maria@email.com"
+}
+
+<> 2026-02-21T155056.201.json
+
+###
+
